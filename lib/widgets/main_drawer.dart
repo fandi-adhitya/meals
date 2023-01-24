@@ -3,7 +3,7 @@ import 'package:mealsapp/screens/filter_screen.dart';
 
 class MainDrawer extends StatelessWidget {
 
-  Widget _buildListTitle(String text, IconData icon, Function tabHandler) {
+  Widget _buildListTitle(String text, IconData icon, VoidCallback tabHandler) {
     return ListTile(
       leading: Icon(icon, size: 26,),
       title: Text(text,
@@ -13,7 +13,7 @@ class MainDrawer extends StatelessWidget {
             fontWeight: FontWeight.bold
         ),
       ),
-      onTap: () => tabHandler,
+      onTap: tabHandler,
     );
   }
 
@@ -40,14 +40,14 @@ class MainDrawer extends StatelessWidget {
               'Meals',
               Icons.restaurant,
               (){
-                Navigator.of(context).pushNamed('/');
+                Navigator.of(context).pushReplacementNamed('/');
               }
           ),
           _buildListTitle(
               'Filters',
               Icons.settings,
               (){
-                Navigator.of(context).pushNamed(FiltersScreen.routeName)
+                Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
               }
           )
         ],

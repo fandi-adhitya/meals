@@ -38,6 +38,12 @@ class MealDetailScreen extends StatelessWidget {
         title: Text('The Meal - $mealId'),
       ),
       backgroundColor: Theme.of(context).canvasColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.of(context).pop(mealId);
+        },
+        child: Icon(Icons.delete),
+      ),
       body: SingleChildScrollView(
         child: Column(
          children: [
